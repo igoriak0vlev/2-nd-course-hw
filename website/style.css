@@ -100,8 +100,9 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  transition: all 0.3s;
 }
-.product__items_item1 :hover {
+.product__items_item1:hover {
   box-sizing: border-box;
   border: 3px solid rgb(68, 210, 255);
   border-radius: 16px;
@@ -111,8 +112,9 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  transition: all 0.3s;
 }
-.product__items_item2 :hover {
+.product__items_item2:hover {
   box-sizing: border-box;
   border: 3px solid rgb(68, 210, 255);
   border-radius: 16px;
@@ -122,8 +124,9 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  transition: all 0.3s;
 }
-.product__items_item3 :hover {
+.product__items_item3:hover {
   box-sizing: border-box;
   border: 3px solid rgb(68, 210, 255);
   border-radius: 16px;
