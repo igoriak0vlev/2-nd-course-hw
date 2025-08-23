@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Главная страница</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      #wordBox {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #f8f9fa;
+        padding: 20px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        font-size: 20px;
+        z-index: 9999;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+    </style>
   </head>
 
   <body>
@@ -17,7 +32,9 @@
             <span class="top_text_weight">поехали</span> и
             <span class="top_text_weight">приступай</span>
           </h2>
-          <a class="link-top link-top_text" href="#">Поехали!</a>
+          <a class="link-top link-top_margin link-top_text" href="#"
+            >Поехали!</a
+          >
         </div>
       </div>
     </section>
@@ -27,7 +44,7 @@
         <a class="product__items" href="#">
           <div>
             <div class="product_img">
-              <img src="./img/1.png" alt="img" />
+              <img class="product_img-size" src="./img/1.png" alt="img" />
             </div>
             <h3 class="product_name">Игра 1</h3>
           </div>
@@ -35,7 +52,7 @@
         <a class="product__items" href="#">
           <div>
             <div class="product_img">
-              <img src="./img/2.png" alt="img" />
+              <img class="product_img-size" src="./img/2.png" alt="img" />
             </div>
             <h3 class="product_name">Игра 2</h3>
           </div>
@@ -43,7 +60,7 @@
         <a class="product__items product__items_item3" href="#">
           <div>
             <div class="product_img">
-              <img src="./img/3.png" alt="img" />
+              <img class="product_img-size" src="./img/3.png" alt="img" />
             </div>
             <h3 class="product_name">Игра 3</h3>
           </div>
@@ -51,6 +68,75 @@
       </div>
     </section>
 
+    <section class="center blok_back">
+      <div class="blok">
+        <div class="blok__text">
+          <h2 class="blok__text_heading">
+            Времена года<span class="blokWeather__text_heading-item">!</span>
+          </h2>
+          <p class="blok__text_description">
+            Нажмите кнопку играть, введите номер месяца (от 1 до 12) и вы
+            узнаете к какому времени года он относится
+          </p>
+          <button onclick="answerMonth()" class="link-top link-top_text">
+            Играть!
+          </button>
+          <!-- <a onclick="answerMonth()" class="link-top link-top_text" href="#"
+            >Играть!</a
+          > -->
+        </div>
+        <div class="blok__img">
+          <img
+            class="blok__img_size"
+            src="./img/gameweather.png"
+            alt="undraw_video_game"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="center blok_back">
+      <div class="blok blok_revers">
+        <div class="blok__text blok_textPoz">
+          <h2 class="blok__text_heading">Запомни слова</h2>
+          <p class="blok__text_description">
+            При нажатии на кнопку играть, вы увидите несколько слов, которые вам
+            необходимо запомнить.
+          </p>
+          <button onclick="memberWords()" class="link-top link-top_text">
+            Играть!
+          </button>
+        </div>
+        <div class="blok__img blok_imgPoz">
+          <img
+            class="blok__img_size"
+            src="./img/gameWord.png"
+            alt="undraw_video_game"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="center blok_backImg">
+      <div class="blok blok_withoutImg">
+        <div class="blok__text blok__text_withoutImg blok_textPoz">
+          <h2 class="blok__text_heading">Игра в загадки</h2>
+          <p class="blok__text_description blok__text_withoutImg">
+            Компьютер загадывает загадку, вам необходимо ее угадать, если вы
+            дадите не правильный ответ, то компьютер даст вам подсказку. У вас
+            будет три попытки и две подсказки.
+          </p>
+          <button onclick="getMystery()" class="link-top link-top_text">
+            Играть!
+          </button>
+        </div>
+      </div>
+    </section>
+
     <script src="script.js"></script>
   </body>
+
+  <footer class="center ftr_back">
+    <p class="ftr_text">Все права защищены</p>
+  </footer>
 </html>

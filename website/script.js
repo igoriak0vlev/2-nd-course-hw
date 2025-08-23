@@ -1,134 +1,122 @@
-/*ДЗ №1
 
-let a = 10;
-alert(a);
-a = 20;
-alert(a);
+function answerMonth() {
+  let getMonth = +prompt(`Введите номер месяца от 1 до 12`);
 
-let yearIphone = 2008;
-alert ("Год выпуска iPhone: " + yearIphone);
-
-let creator = "Брендан Эйх";
-alert (`Имя создателя языка JavaScript - ${creator}`);
-
-let b = 10;
-let c = 2;
-//alert (`${b + c}, ${b - c}, ${b * c}, ${b / c}`);
-let result = c ** 5;
-//alert (result);
-
-a = 9;
-b = 2; 
-result = a % b;
-alert (result);
-
-// задача 7
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num++;
-num--;
-alert (num);
-
-//№8
-let age = prompt("Сколько тебе лет?");
-alert (age);
-
-const user = {
-  name: "Igor",
-  age: 29,
-  isAdmin: false,
-};
-user["city of residence"] = "Mersin";
-user.age = 30;
-delete user["city of residence"];
-
-let info = prompt("Какую информацию хотите узнать о пользователе?");
-alert(user[info]);
-
-info = prompt("Как ваше имя?");
-alert(`Привет, ${info}!`);
-
-
-// ДЗ №2
-
-//задача 1
-let password = String("пароль");
-let inputPassword = String(prompt("Введите пароль"));
-
-if (inputPassword === password) {
-  alert("Пароль введен верно");
-} else {
-  alert("Пароль введен неправильно");
+  if (Number.isNaN(getMonth)) {
+    console.log(`Ошибка: введите число от 1 до 12`);
+  } else {
+    switch (getMonth) {
+      case 12:
+      case 1:
+      case 2:
+        console.log(`Зима`);
+        break;
+      case 3:
+      case 4:
+      case 5:
+        console.log(`Весна`);
+        break;
+      case 6:
+      case 7:
+      case 8:
+        console.log(`Лето`);
+        break;
+      case 9:
+      case 10:
+      case 11:
+        console.log(`Осень`);
+        break;
+      default:
+        console.log(`Введите номер месяца повторно`);
+        break;
+    }
+  }
 }
 
-//задача 2
-let c = Number(prompt("Введи число"));
-if (c > 0 && c < 10) {
-  console.log("Верно");
-} else {
-  console.log("Неверно");
+
+const wordsArr = [
+  "Яблоко",
+  "Груша",
+  "Дыня",
+  "Виноград",
+  "Персик",
+  "Апельсин",
+  "Мандарин",
+];
+
+const shuffled = [...wordsArr].sort(() => Math.random() - 0.5);
+
+function memberWords() {
+  let answer = confirm(
+    `Сейчас появятся слова, из которых тебе нужно запомнить первое и последнее слово, а после этого написать.`
+  );
+
+  if (answer) {
+    console.log(1);
+    showWordsTemporarily(shuffled);
+  } else {
+    alert(`Хорошо, сыграем позже.`);
+  }
 }
 
-// задача 3
-let d = 3;
-let e = 127;
+function showWordsTemporarily(words, duration = 2000) {
+  const wordBox = document.createElement("div");
+  wordBox.id = "wordBox";
+  wordBox.textContent = words.join(", ");
+  document.body.appendChild(wordBox);
+  console.log(2);
 
-if (d > 100 || e > 100 ) {
-  console.log("Верно");
-} else {
-  console.log("Неверно");
-}
-  
-
-// задача 4
-let a = '2';
-let b = '3';
-alert(+a + +b);
-
-//задача 5
-let monthNumber = Number(prompt('Номер месяца'));
-switch (monthNumber) {
-  case 12:
-  case 1:
-  case 2:
-    console.log('зима');
-    break;
-  case 3:
-  case 4:
-  case 5:
-    console.log('весна');
-    break;
-  default:
-    console.log('другое время года');
-    break;
+  setTimeout(() => {
+    wordBox.remove();
+    setTimeout(() => askUserInput(words[0], words[words.length - 1]), 1);
+  }, duration);
+  console.log(3);
 }
 
-//задача 7
-let a = Number(prompt('Введите число'));
+function askUserInput(correctFirst, correctLast) {
+  console.log(4);
 
-if (!a == true) {
-  a = prompt('Введено не число. Введите число');
-} else if (a % 2 == 0) {
-alert('Четное');
-} else {
-  alert('Нечетное');
-}*/
+  const userWords = prompt(`Введи первое и последнее слово через запятую`);
+  const userWordsArr = userWords.split(`, `);
 
-//задача 8 и 9
-let clientOS = 1; // 0 — iOS, 1 — Android
-let clientDeviceYear = 2009;
+  let check =
+    userWordsArr[0].toLowerCase() === correctFirst.toLowerCase() &&
+    userWordsArr[1].toLowerCase() === correctLast.toLowerCase();
 
-if (clientOS === 0 && clientDeviceYear >= 2015) {
-  console.log("Установите версию приложения для iOS по ссылке");
-} else if (clientOS === 0 && clientDeviceYear < 2015) {
-  console.log("Установите облегченную версию приложения для iOS по ссылке");
-} else if (clientOS === 1 && clientDeviceYear >= 2015) {
-  console.log("Установите версию приложения для Android по ссылке");
-} else if (clientOS === 1 && clientDeviceYear < 2015) {
-  console.log("Установите облегченную версию приложения для Android по ссылке");
-} else {
-  console.log("Не удалось определить операционную систему");
+  if (check) {
+    alert(`У тебя отличная память.`);
+  } else {
+    alert(`Попробуй снова.`);
+  }
 }
+
+
+function mysteryRigth(a) {
+  return a.toLowerCase() === "марка";
+}
+
+function getMystery() {
+  alert(`Что может путешествовать по свету, оставаясь в одном и том же углу?`);
+
+  let getAns = prompt(`Ведите ответ`);
+
+  if (mysteryRigth(getAns)) {
+    alert(`Верно`);
+  } else {
+    alert(`Это что-то маленькое, что можно наклеить.`);
+    getAns = prompt(`Ведите ответ`);
+    if (mysteryRigth(getAns)) {
+      alert(`Верно`);
+    } else {
+      alert(`Это используется для отправки писем.`);
+      getAns = prompt(`Ведите ответ`);
+      if (mysteryRigth(getAns)) {
+        alert(`Верно`);
+      } else {
+        alert(`Не верно. Ответ - Марка`);
+      }
+    }
+  }
+}
+
+const titleEL = 

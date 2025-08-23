@@ -1,0 +1,506 @@
+@import "vars";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+@font-face {
+  font-family: "Montserrat_400";
+  src: url(./fonts/montserrat_400.ttf);
+}
+@font-face {
+  font-family: "Montserrat_500";
+  src: url(./fonts/montserrat_500.ttf);
+}
+@font-face {
+  font-family: "Montserrat_600";
+  src: url(./fonts/montserrat_600.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat_700";
+  src: url(./fonts/montserrat-700.ttf);
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.top_back {
+  height: 735px;
+  background-image: url(./img/topback.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &_catalog {
+    height: 400px;
+    background-image: url(./img/topbackcat.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
+  line-height: 76px;
+  &_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10;
+    padding: 16px 0px 16px 0px;
+  }
+  &_input {
+    font-family: "Montserrat_400", sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    width: 288px;
+    height: 41px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    background-color: transparent;
+  }
+  &_input::placeholder {
+    color: white;
+  }
+}
+
+.menu {
+  font-family: "Montserrat_400", sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  gap: 32px;
+  /*border: 1px solid rgb(17, 47, 152);*/
+  &_catalog {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_link {
+    font-family: "Montserrat_400", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    &_mobil {
+      display: none;
+    }
+    &_catalog {
+      color: rgb(0, 0, 0);
+      font-family: "Montserrat_400";
+      font-size: 16px;
+      line-height: 32px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+    &_catalog:not(:last-child)::after {
+      content: "/";
+      padding: 12px;
+      font-family: "Montserrat_400", sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+    _catalog:hover {
+      text-decoration: underline;
+    }
+  }
+  &_link:hover {
+    text-decoration: underline;
+  }
+}
+
+.nav_select {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.select {
+  display: flex;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  width: 288px;
+  &_sorting {
+    border: none;
+    margin: 0;
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat_500";
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+    appearance: none;
+    padding: 10px 5px 10px 24px;
+    width: 100%;
+    -webkit-appearance: none; /* Для Safari */
+    -moz-appearance: none; /* Для Firefox */
+    background-image: url(./img/arrow.svg);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    padding-right: 30px; /* Место для стрелки */
+    &:hover {
+      text-decoration: underline;
+      border-color: #999;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.arrow {
+  padding-right: 16px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  &_title {
+    font-family: "Montserrat_600", sans-serif;
+    font-size: 64px;
+    line-height: 70px;
+    margin-top: 64px;
+    margin-bottom: 16px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0%;
+    text-align: left;
+  }
+  &_catalog {
+    margin-top: 128px;
+  }
+  &_text {
+    font-family: "Montserrat_400", sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0%;
+    text-align: left;
+  }
+  &_link {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Montserrat_400", sans-serif;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration-line: underline;
+  }
+}
+
+.for-box {
+}
+
+.heading_for {
+  color: #000;
+  font-size: 48px;
+}
+
+.for {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 32px;
+  &_item {
+    height: 415px;
+    grid-column: span 4;
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat_600", sans-serif;
+    font-size: 34px;
+    line-height: 41px;
+    letter-spacing: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &_big {
+      grid-column: span 6;
+    }
+
+    &_1 {
+      background-image: url(./img/for1.jpeg);
+    }
+
+    &_2 {
+      background-image: url(./img/for2.jpeg);
+    }
+
+    &_3 {
+      background-image: url(./img/for3.jpeg);
+    }
+
+    &_4 {
+      background-image: url(./img/for4.jpeg);
+    }
+
+    &_5 {
+      background-image: url(./img/for5.jpeg);
+    }
+  }
+}
+
+.products_box_style {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 56px;
+}
+
+.product {
+  box-sizing: border-box;
+  width: 378px;
+  padding: 8px;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &_img {
+    width: 100%;
+  }
+  &_heading {
+    margin-top: 64px;
+    margin-bottom: 32px;
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat_600", sans-serif;
+    font-size: 48px;
+    line-height: 59px;
+    letter-spacing: 0%;
+    /*text-align: center;*/
+  }
+
+  &_name {
+    font-size: 24px;
+    line-height: 29px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 12px;
+    font-family: "Montserrat_600", sans-serif;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  &_text {
+    margin-bottom: 12px;
+    color: rgb(136, 136, 136);
+    font-family: "Montserrat_400", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_price {
+    color: rgb(5, 5, 5);
+    font-family: "Montserrat_500", sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: left;
+    display: inline;
+    &_new {
+      color: rgb(136, 136, 136);
+      font-family: "Montserrat_500", sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 29px;
+      letter-spacing: 0%;
+      text-align: left;
+      text-decoration-line: line-through;
+      display: inline;
+      margin-left: 32px;
+    }
+  }
+}
+.link {
+  &_text {
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat_400", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration-line: underline;
+    &:hover {
+      color: rgb(136, 136, 136);
+      text-decoration: none;
+    }
+  }
+
+  &_style {
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 64px;
+    margin-left: 4px;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgb(247, 246, 246);
+  padding-top: 32px;
+  padding-bottom: 60px;
+
+  &_content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 789px;
+    flex-wrap: wrap;
+    column-gap: 129px;
+  }
+
+  &_menu {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+  }
+
+  &_contact {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+  }
+
+  &_heading {
+    margin-bottom: 12px;
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat_500", sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0%;
+    text-align: left;
+    display: block;
+  }
+
+  &_info {
+    display: flex;
+  }
+
+  &_item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    &_link:hover path {
+      fill: #000;
+    }
+  }
+
+  &_link {
+    margin-bottom: 12px;
+    color: rgb(136, 136, 136);
+    font-family: "Montserrat_500", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  &_link:hover {
+    text-decoration: underline;
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_text {
+    margin-bottom: 8px;
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat_400", sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+}
+
+.input1 {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(196, 196, 196);
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #c4c4c4;
+  width: 260px;
+  height: 40px;
+  font-family: "Montserrat_400", sans-serif;
+  color: rgb(196, 196, 196);
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0%;
+  text-align: left;
+  padding-left: 17px;
+  padding-right: 17px;
+  margin-bottom: 8px;
+}
+
+.button1 {
+  background: rgba(222, 215, 215, 0.41);
+  border: 1px solid rgba(222, 215, 215, 0.41);
+  box-sizing: border-box;
+  border-radius: 16px;
+  width: 275px;
+  height: 46px;
+  color: rgb(0, 0, 0);
+  font-family: "Montserrat_400", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0%;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+  &:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+}
+
+@import "basket";
+@import "tablet";
+@import "mobil";
