@@ -1,4 +1,3 @@
-
 function answerMonth() {
   let getMonth = +prompt(`Введите номер месяца от 1 до 12`);
 
@@ -32,7 +31,6 @@ function answerMonth() {
     }
   }
 }
-
 
 const wordsArr = [
   "Яблоко",
@@ -90,7 +88,6 @@ function askUserInput(correctFirst, correctLast) {
   }
 }
 
-
 function mysteryRigth(a) {
   return a.toLowerCase() === "марка";
 }
@@ -118,5 +115,3 @@ function getMystery() {
     }
   }
 }
-
-const titleEL = 
